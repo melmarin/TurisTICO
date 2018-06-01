@@ -86,7 +86,6 @@
 
             }); //
         </script>
-<<<<<<< HEAD
 
         <script type="text/javascript">
             $(function () {
@@ -106,19 +105,30 @@
                     });
                 });
             });
-
+<<<<<<< HEAD
+            
+=======
+>>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
             $("[id=login]").popover({
                 html: true,
                 content: function () {
                     return $('#popover-content').html();
                 }
             });
+<<<<<<< HEAD
+
+=======
+>>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
             $("[id=hola]").popover({
                 html: true,
                 content: function () {
                     return $('#hola-mundo').html();
                 }
             });
+<<<<<<< HEAD
+
+=======
+>>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
         </script>
         <!--[if lt IE 8]>
                         <div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
@@ -133,7 +143,7 @@
     <body class="main">
         <div id="main">
             <div class="top1 clearfix">
-               <header>
+                <header>
                     <div class="logo_wrapper log">
                         <a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt="">
                         </a>
@@ -160,8 +170,8 @@
                                     <!-- Include the above in your HEAD tag -->
                                     <ul class="nav sf-menu clearfix">
                                         <li><a href="index.php">Inicio</a></li>
-                                        
-                                        <li><a href="index-3.html.php">Toures </a>
+
+                                        <li><a href="index-3.html">Toures </a>
                                             <ul>
                                                 <li><a href="index-3.html">San Jose</a></li>
                                                 <li><a href="index-3.html">Alajuela</a></li>
@@ -197,8 +207,7 @@
                                             </form>
                                         </div>
 
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" type="button" data-html="true" href="#" id="hola">Registrarse</a></li>
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>                                    
 
                                         <div id="hola-mundo" class="hide">
                                             <form class="form-inline" role="form">
