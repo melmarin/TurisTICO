@@ -13,6 +13,10 @@
     }
 </style>
 
+<div  class="w3-display-container w3-text-white">
+    <img  src="View/images/costa-rica-1.jpg" alt="Lights" style="width:100%; height:300px;">    
+</div>
+<div>
     <div>
         <div style ="float: left; " >
             <h1 style="text-align: left; margin-left: 150px; margin-right: 0px; color: #ffffff;" class="slider3-title">Acerca de </h1>
@@ -43,7 +47,7 @@
             </div>
             <div >
                 <h1  style="font-family: 'Comfortaa'; color: #ffffff;">Melvin Marín Navarro</h1>
-                <img src="pulpitrock.jpg"  style="width:200px; height:200px;">
+                <img src="./View/images/melvin.jpg"  style="width:200px; height:220px;">
                 <p></p>
             </div>
             <div >
@@ -58,4 +62,6 @@
             </div>
         </div>
     </div>
+</div>
+
 </html>

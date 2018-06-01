@@ -67,7 +67,7 @@
                         height: 'variable', //	optionally resize item-height
                         visible: {
                             min: 1,
-                            max: 4
+                            max: 6
                         }
                     },
                     mousewheel: false,
@@ -88,41 +88,42 @@
 
             }); //
         </script>
-        
-        <script>
-                                                    $(function () {
-                                                        $('.js-tooltip-trigger').each(function (ind, ele) {
-                                                            var $ele = $(ele),
-                                                                    $ttSpan = $ele.next('.js-tooltip'),
-                                                                    ttHtml = $ttSpan.html(),
-                                                                    rndID = 'ttid' + String(Math.random()).substr(2);
 
-                                                            $ttSpan.attr('id', rndID).removeAttr('style').html('');
+        <script type="text/javascript">
+            $(function () {
+                $('.js-tooltip-trigger').each(function (ind, ele) {
+                    var $ele = $(ele),
+                            $ttSpan = $ele.next('.js-tooltip'),
+                            ttHtml = $ttSpan.html(),
+                            rndID = 'ttid' + String(Math.random()).substr(2);
 
-                                                            $ele.popover({
-                                                                html: true,
-                                                                trigger: 'focus',
-                                                                placement: 'bottom',
-                                                                container: '#' + rndID,
-                                                                content: ttHtml
-                                                            });
-                                                        });
-                                                    });
-                                                    $("[id=login]").popover({
-                                                        html: true,
-                                                        content: function () {
-                                                            return $('#popover-content').html();
-                                                        }
-                                                    });
+                    $ttSpan.attr('id', rndID).removeAttr('style').html('');
 
-                                                    $("[id=hola]").popover({
-                                                        html: true,
-                                                        content: function () {
-                                                            return $('#hola-mundo').html();
-                                                        }
-                                                    });
+                    $ele.popover({
+                        html: true,
+                        trigger: 'focus',
+                        placement: 'bottom',
+                        container: '#' + rndID,
+                        content: ttHtml
+                    });
+                });
+            });
+            
+            $("[id=login]").popover({
+                html: true,
+                content: function () {
+                    return $('#popover-content').html();
+                }
+            });
 
-</script>
+            $("[id=hola]").popover({
+                html: true,
+                content: function () {
+                    return $('#hola-mundo').html();
+                }
+            });
+
+        </script>
         <!--[if lt IE 8]>
                         <div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
                 <![endif]-->
@@ -141,8 +142,8 @@
                     <div class="search-form-wrapper clearfix">
                         <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >
                             <input type="text" name="s" value='Search' onBlur="if (this.value == '')
-                                                            this.value = 'Search'" onFocus="if (this.value == 'Search')
-                                                                        this.value = ''">
+                                        this.value = 'Search'" onFocus="if (this.value == 'Search')
+                                                    this.value = ''">
                             <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                         </form>
                     </div>
@@ -157,8 +158,9 @@
                                 <div class="nav-collapse nav-collapse_ collapse">
                                     <!-- Include the above in your HEAD tag -->
                                     <ul class="nav sf-menu clearfix">
-                                        <li><a href="index.html">Inicio</a></li>
-                                        <li class="sub-menu sub-menu-1"><a href="index-3.html">Toures</a>
+                                        <li><a href="index.php">Inicio</a></li>
+                                        
+                                        <li><a href="index-3.html.php">Toures </a>
                                             <ul>
                                                 <li><a href="index-3.html">San Jose</a></li>
                                                 <li><a href="index-3.html">Alajuela</a></li>
@@ -172,8 +174,8 @@
                                         <li><a href="AcercaDeTurisTico.php">Acerda de</a></li>
 
                                         <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
-                                        
-                                       
+
+
 
                                         <div id="popover-content" class="hide">
                                             <form>
@@ -193,8 +195,8 @@
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </form>
                                         </div>
-                                        
-                                    <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>
+
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>
                                         <div id="hola-mundo" class="hide">
                                             <form class="form-inline" role="form">
                                                 <div class="form-group">
@@ -209,7 +211,7 @@
                                                 </div>
                                             </form>
                                         </div>
-                                       </ul>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
