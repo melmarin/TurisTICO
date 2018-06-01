@@ -31,11 +31,9 @@
         <script>
             $(document).ready(function () {
                 //
-
             }); //
             $(window).load(function () {
                 //
-
             }); //
         </script>
     </head>
@@ -125,6 +123,11 @@
                             <div class="filter">
                                 <div class="stars">
                                     <br><br>
+                                      <select  class="nice-select wide">
+                                        <option data-display="Provincia">Turista</option>
+                                        <option value="1">Nacional</option>
+                                        <option value="2">Extranjero</option>
+                                    </select>
                                     <select  class="nice-select wide">
                                         <option data-display="Provincia">Provincia</option>
                                         <option value="1">San Jose</option>
@@ -203,7 +206,7 @@
 
                         <div class="span8">
 
-                            <h1>Tus Destinatinos</h1>
+                            <h1>Tus Destinos</h1>
                             <div id="content_mapa_div">
                                 <div id="mapa_div">
 
@@ -494,7 +497,6 @@
                     a.src = g;
                     m.parentNode.insertBefore(a, m)
                 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
                 ga('create', 'UA-64633646-1', 'auto');
                 ga('send', 'pageview');
             </script>
