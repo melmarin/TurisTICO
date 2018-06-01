@@ -38,48 +38,6 @@
 
             }); //
         </script>
-        <style>
-#search {
-    width:90%;
-}
-
-.searchicon {
-    color:#5CB85C;
-}
-
-.items-collection{
-    margin:20px 0 0 0;
-}
-.items-collection label.btn-default.active{
-    background-color:#007ba7;
-    color:#FFF;
-}
-.items-collection label.btn-default{
-    width:90%;
-    border:1px solid #305891;
-    margin:5px; 
-    border-radius: 17px;
-    color: #305891;
-}
-.items-collection label .itemcontent{
-    width:100%;
-}
-.items-collection .btn-group{
-    width:90%
-}
-</style>
-
-<script>
-$(function () {
-    $('#search').on('keyup', function () {
-        var pattern = $(this).val();
-        $('.items-collection .items').hide();
-        $('.items-collection .items').filter(function () {
-            return $(this).text().match(new RegExp(pattern, 'i'));
-        }).show();
-    });
-});
-</script>
     </head>
 
     <body class="subpage">
@@ -98,8 +56,8 @@ $(function () {
                     <div class="search-form-wrapper clearfix">
                         <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >
                             <input type="text" name="s" value='Search' onBlur="if (this.value == '')
-                                        this.value = 'Search'" onFocus="if (this.value == 'Search')
-                                                    this.value = ''">
+                                                            this.value = 'Search'" onFocus="if (this.value == 'Search')
+                                                                        this.value = ''">
                             <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                         </form>
                     </div>
@@ -129,7 +87,7 @@ $(function () {
                                                 <li><a href="index-3.html">Limon</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="index-1.html">Acerda de</a></li>
+                                        <li><a href="AcercaDeTurisTico.php">Acerda de</a></li>
 
                                     </ul>
                                 </div>
@@ -192,146 +150,19 @@ $(function () {
                                         <small class="max pull-right">Max</small>
                                     </div>
                                     <center><label style="margin-top:5em;">Top</label></center>
-                                    <a href="" class="turist">
+                                    <a href="https://www.w3schools.com" class="turist">
                                         <img class="rounded" alt="W3Schools" src="View/assets/vo.svg" width="100" height="100">
                                     </a>
-                                    <a href="" class="turist">
+                                    <a href="https://www.w3schools.com" class="turist">
                                         <img class="rounded" alt="W3Schools" src="View/assets/fo.svg" width="100" height="100">
                                     </a>
-                                    <a href="" class="turist">
+                                    <a href="https://www.w3schools.com" class="turist">
                                         <img class="rounded" alt="W3Schools" src="View/assets/ri.svg" width="100" height="100">
                                     </a>
-                                    <a href="" class="turist">
+                                    <a href="https://www.w3schools.com" class="turist">
                                         <img class="rounded" alt="W3Schools" src="View/assets/be.svg" width="100" height="100">
                                     </a>
                                     <br><br><br><br><br>
-                                     <!-- ACTIVIDADES 
-                                    <div class="container">
-                                        <h2>Multiple items selector with filter</h2>
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <div class="items-collection">
-
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group bizmoduleselect">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-car fa-2x"></span>
-                                                                        <h5>car</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-truck fa-2x"></span>
-                                                                        <h5>truck</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-laptop fa-2x"></span>
-                                                                        <h5>laptop</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-cube fa-2x"></span>
-                                                                        <h5>cube</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-lock fa-2x"></span>
-                                                                        <h5>secure</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>                
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-barcode fa-2x"></span>
-                                                                        <h5>barcode</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>                
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-key fa-2x"></span>
-                                                                        <h5>key</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>                
-                                                    <div class="items col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="info-block block-info clearfix">
-                                                            <div data-toggle="buttons" class="btn-group itemcontent">
-                                                                <label class="btn btn-default">
-                                                                    <div class="itemcontent">
-                                                                        <input type="checkbox" name="var_id[]" autocomplete="off" value="">
-                                                                        <span class="fa fa-keyboard-o fa-2x"></span>
-                                                                        <h5>keyboard</h5>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>                
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <br>
-                                            <div class="form-group">
-                                                <div class="col-sm-12 col-md-12 col-lg-12">                
-                                                    <i class="fa fa-search fa-2x pull-left searchicon"></i><input type="search" class="form-control" id="search" placeholder="Filter items...">
-                                                </div>
-                                            </div>
-                                        </div>    
-                                    </div>
-                                    <!-- ACTIVIDADES -->-->
-
-
                                     <div class="aling-star">
                                         <form action="">
                                             <input class="star star-5" id="star-5-2" type="radio" name="star"/>
@@ -461,7 +292,7 @@ $(function () {
                                 </div>
                                 <div class="thumb3">
                                     <div class="thumbnail clearfix">
-                                        <figure class="img-polaroid"><img src="View/images/cr/item5.jpg" alt=""></figure>
+                                        <figure class="img-polaroid"><img src="images/cr/item5.jpg" alt=""></figure>
                                         <div class="caption">
                                             <span class="sitio-name">Manuel Antonio</span>
                                             <span class="sitio-item__stars">
@@ -625,10 +456,10 @@ $(function () {
             <script type="text/javascript" src="View/js/superfish.js"></script>
             <script type="text/javascript" src="View/js/jquery.ui.totop.js"></script>
             <script>
-                                $(document).ready(function () {
-                                    $('select:not(.ignore)').niceSelect();
-                                    FastClick.attach(document.body);
-                                });
+        $(document).ready(function () {
+            $('select:not(.ignore)').niceSelect();
+            FastClick.attach(document.body);
+        });
             </script>
 
             <script>

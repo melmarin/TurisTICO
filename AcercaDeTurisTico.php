@@ -47,7 +47,11 @@
             </div>
             <div >
                 <h1  style="font-family: 'Comfortaa'; color: #ffffff;">Melvin Marín Navarro</h1>
+<<<<<<< HEAD
                 <img src="./View/images/melvin.jpg"  style="width:200px; height:220px;">
+=======
+                <img src="View/pulpitrock.jpg"  style="width:200px; height:200px;">
+>>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
                 <p></p>
             </div>
             <div >
