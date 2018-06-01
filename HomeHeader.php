@@ -168,9 +168,12 @@
                                                 <li><a href="index-3.html">Limon</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="index-1.html">Acerda de</a></li>
-                                
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" type="button" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
+                                        <li><a href="AcercaDeTurisTico.php">Acerda de</a></li>
+
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
+                                        
+                                       
+
                                         <div id="popover-content" class="hide">
                                             <form>
                                                 <div class="form-group">
