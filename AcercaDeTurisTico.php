@@ -47,7 +47,6 @@
             </div>
             <div >
                 <h1  style="font-family: 'Comfortaa'; color: #ffffff;">Melvin Marín Navarro</h1>
-<<<<<<< HEAD
                 <img src="./View/images/melvin.jpg"  style="width:200px; height:220px;">
                 <p></p>
             </div>
