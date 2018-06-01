@@ -95,20 +95,8 @@
                             $ttSpan = $ele.next('.js-tooltip'),
                             ttHtml = $ttSpan.html(),
                             rndID = 'ttid' + String(Math.random()).substr(2);
-
                     $ttSpan.attr('id', rndID).removeAttr('style').html('');
 
-=======
-
-        <script>
-            $(function () {
-                $('.js-tooltip-trigger').each(function (ind, ele) {
-                    var $ele = $(ele),
-                            $ttSpan = $ele.next('.js-tooltip'),
-                            ttHtml = $ttSpan.html(),
-                            rndID = 'ttid' + String(Math.random()).substr(2);
-                    $ttSpan.attr('id', rndID).removeAttr('style').html('');
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
                     $ele.popover({
                         html: true,
                         trigger: 'focus',
@@ -118,30 +106,19 @@
                     });
                 });
             });
-<<<<<<< HEAD
-            
-=======
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
+
             $("[id=login]").popover({
                 html: true,
                 content: function () {
                     return $('#popover-content').html();
                 }
             });
-<<<<<<< HEAD
-
-=======
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
             $("[id=hola]").popover({
                 html: true,
                 content: function () {
                     return $('#hola-mundo').html();
                 }
             });
-<<<<<<< HEAD
-
-=======
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
         </script>
         <!--[if lt IE 8]>
                         <div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
@@ -220,11 +197,9 @@
                                             </form>
                                         </div>
 
-<<<<<<< HEAD
                                         <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>
-=======
                                         <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" type="button" data-html="true" href="#" id="hola">Registrarse</a></li>
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
+
                                         <div id="hola-mundo" class="hide">
                                             <form class="form-inline" role="form">
                                                 <div class="form-group">
@@ -239,10 +214,9 @@
                                                 </div>
                                             </form>
                                         </div>
-<<<<<<< HEAD
-=======
+
                                         <li><a  href="#"></a></li>
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
+
                                     </ul>
                                 </div>
                             </div>
