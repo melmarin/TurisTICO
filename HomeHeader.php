@@ -47,7 +47,6 @@
                     transPeriod: 1000,
                     minHeight: '200px'
                 });
-
                 //	carouFredSel
                 $('#slider3 .carousel.main ul').carouFredSel({
                     auto: {
@@ -81,60 +80,43 @@
                     $('#slider3 .carousel.main ul').trigger("updateSizes");
                 }
                 updateSizes_vat();
-
             }); //
             $(window).load(function () {
                 //
 
             }); //
         </script>
-        
+
         <script>
-                                                    $(function () {
-                                                        $('.js-tooltip-trigger').each(function (ind, ele) {
-                                                            var $ele = $(ele),
-                                                                    $ttSpan = $ele.next('.js-tooltip'),
-                                                                    ttHtml = $ttSpan.html(),
-                                                                    rndID = 'ttid' + String(Math.random()).substr(2);
-
-                                                            $ttSpan.attr('id', rndID).removeAttr('style').html('');
-
-                                                            $ele.popover({
-                                                                html: true,
-                                                                trigger: 'focus',
-                                                                placement: 'bottom',
-                                                                container: '#' + rndID,
-                                                                content: ttHtml
-                                                            });
-                                                        });
-                                                    });
-
-
-
-
-
-
-
-
-
-
-
-
-                                                    $("[id=login]").popover({
-                                                        html: true,
-                                                        content: function () {
-                                                            return $('#popover-content').html();
-                                                        }
-                                                    });
-
-                                                    $("[id=hola]").popover({
-                                                        html: true,
-                                                        content: function () {
-                                                            return $('#hola-mundo').html();
-                                                        }
-                                                    });
-
-</script>
+            $(function () {
+                $('.js-tooltip-trigger').each(function (ind, ele) {
+                    var $ele = $(ele),
+                            $ttSpan = $ele.next('.js-tooltip'),
+                            ttHtml = $ttSpan.html(),
+                            rndID = 'ttid' + String(Math.random()).substr(2);
+                    $ttSpan.attr('id', rndID).removeAttr('style').html('');
+                    $ele.popover({
+                        html: true,
+                        trigger: 'focus',
+                        placement: 'bottom',
+                        container: '#' + rndID,
+                        content: ttHtml
+                    });
+                });
+            });
+            $("[id=login]").popover({
+                html: true,
+                content: function () {
+                    return $('#popover-content').html();
+                }
+            });
+            $("[id=hola]").popover({
+                html: true,
+                content: function () {
+                    return $('#hola-mundo').html();
+                }
+            });
+        </script>
         <!--[if lt IE 8]>
                         <div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
                 <![endif]-->
@@ -148,7 +130,12 @@
     <body class="main">
         <div id="main">
             <div class="top1 clearfix">
-                <header><div class="logo_wrapper log"><a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt=""></a></div></header>
+               <header>
+                    <div class="logo_wrapper log">
+                        <a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt="">
+                        </a>
+                    </div>
+                </header>
                 <div class="top2 clearfix">
                     <div class="search-form-wrapper clearfix">
                         <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >
@@ -182,11 +169,8 @@
                                             </ul>
                                         </li>
                                         <li><a href="index-1.html">Acerda de</a></li>
-
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
-                                        
-                                       
-
+                                
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" type="button" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
                                         <div id="popover-content" class="hide">
                                             <form>
                                                 <div class="form-group">
@@ -205,8 +189,8 @@
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </form>
                                         </div>
-                                        
-                                    <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>
+
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" type="button" data-html="true" href="#" id="hola">Registrarse</a></li>
                                         <div id="hola-mundo" class="hide">
                                             <form class="form-inline" role="form">
                                                 <div class="form-group">
@@ -221,14 +205,15 @@
                                                 </div>
                                             </form>
                                         </div>
-                                       </ul>
+                                        <li><a  href="#"></a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="myModal" role="dialog" >
+            <div class="modal fade" id="myModal" role="dialog"  class="tab-pane fade n active">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -238,7 +223,7 @@
                         </div>
                         <div style="background-color:#2a2a2a;" class="modal-body">
                             <div class = "center">
-                                <form  method="POST" action="" accept-charset="UTF-8">
+                                <form role="Form" method="POST" action="" accept-charset="UTF-8">
                                     <div class="form-group">
                                         <input type="text" name="email" placeholder="Usuario" class="form-control">
                                     </div>
@@ -260,7 +245,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="myModalIncio" role="dialog" >
+            <div class="modal fade" id="myModalIncio" role="dialog"  class="tab-pane fade">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -271,7 +256,7 @@
                         </div>
                         <div style="background-color:#2a2a2a;" class="modal-body">
                             <div class = "center">
-                                <form method="POST" action="" accept-charset="UTF-8">
+                                <form role="Form" method="POST" action="" accept-charset="UTF-8">
                                     <div class="form-group">
                                         <input type="text" name="email" placeholder="Usuario" class="form-control">
                                     </div>
