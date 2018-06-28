@@ -20,14 +20,14 @@ class ConexionDB {
     }//constructor
 
     public function conectar() {
-        $this->conn = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017");
+        $this->conn = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017","turisticobd");
        
         if(!$this->conn){
             echo "problemas con la conexion";
             exit();
          }//if
          //mysqli_select_db($this->conn, "db_asoiacion_b03675");
-         mysqli_select_db($this->conn, "turisticobd");
+         //mysqli_select_db($this->conn, "turisticobd");
 
         return $this->conn;
     }//conectar
