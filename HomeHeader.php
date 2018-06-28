@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Travel GUIDE</title>
+        <title>TurisTico</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Your description">
@@ -47,6 +47,7 @@
                     transPeriod: 1000,
                     minHeight: '200px'
                 });
+
                 //	carouFredSel
                 $('#slider3 .carousel.main ul').carouFredSel({
                     auto: {
@@ -66,7 +67,7 @@
                         height: 'variable', //	optionally resize item-height
                         visible: {
                             min: 1,
-                            max: 6
+                            max: 4
                         }
                     },
                     mousewheel: false,
@@ -80,55 +81,12 @@
                     $('#slider3 .carousel.main ul').trigger("updateSizes");
                 }
                 updateSizes_vat();
+
             }); //
             $(window).load(function () {
                 //
 
             }); //
-        </script>
-
-        <script type="text/javascript">
-            $(function () {
-                $('.js-tooltip-trigger').each(function (ind, ele) {
-                    var $ele = $(ele),
-                            $ttSpan = $ele.next('.js-tooltip'),
-                            ttHtml = $ttSpan.html(),
-                            rndID = 'ttid' + String(Math.random()).substr(2);
-                    $ttSpan.attr('id', rndID).removeAttr('style').html('');
-
-                    $ele.popover({
-                        html: true,
-                        trigger: 'focus',
-                        placement: 'bottom',
-                        container: '#' + rndID,
-                        content: ttHtml
-                    });
-                });
-            });
-<<<<<<< HEAD
-            
-=======
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
-            $("[id=login]").popover({
-                html: true,
-                content: function () {
-                    return $('#popover-content').html();
-                }
-            });
-<<<<<<< HEAD
-
-=======
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
-            $("[id=hola]").popover({
-                html: true,
-                content: function () {
-                    return $('#hola-mundo').html();
-                }
-            });
-<<<<<<< HEAD
-
-=======
->>>>>>> 93c1a201e9a8db24a9156153351b1a88597dd81e
         </script>
         <!--[if lt IE 8]>
                         <div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
@@ -142,13 +100,8 @@
 
     <body class="main">
         <div id="main">
-            <div class="top1 clearfix">
-                <header>
-                    <div class="logo_wrapper log">
-                        <a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt="">
-                        </a>
-                    </div>
-                </header>
+                      <div class="top1 clearfix">
+                <header><div class="logo_wrapper log"><a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt=""></a></div></header>
                 <div class="top2 clearfix">
                     <div class="search-form-wrapper clearfix">
                         <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >
@@ -169,9 +122,8 @@
                                 <div class="nav-collapse nav-collapse_ collapse">
                                     <!-- Include the above in your HEAD tag -->
                                     <ul class="nav sf-menu clearfix">
-                                        <li><a href="index.php">Inicio</a></li>
-
-                                        <li><a href="index-3.html">Toures </a>
+                                        <li><a href="index.html">Inicio</a></li>
+                                        <li class="sub-menu sub-menu-1"><a href="index-3.html">Toures</a>
                                             <ul>
                                                 <li><a href="index-3.html">San Jose</a></li>
                                                 <li><a href="index-3.html">Alajuela</a></li>
@@ -184,10 +136,7 @@
                                         </li>
                                         <li><a href="AcercaDeTurisTico.php">Acerda de</a></li>
 
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
-
-
-
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" type="button" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
                                         <div id="popover-content" class="hide">
                                             <form>
                                                 <div class="form-group">
@@ -207,25 +156,10 @@
                                             </form>
                                         </div>
 
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" data-html="true" href="#" id="hola">Registrarse</a></li>                                    
-
-                                        <div id="hola-mundo" class="hide">
-                                            <form class="form-inline" role="form">
-                                                <div class="form-group">
-                                                    <select class="form-control">
-                                                        <option>NA</option>
-                                                        <option>RU</option>
-                                                        <option>EU</option>
-                                                        <option>SEA</option>
-                                                    </select>
-
-                                                    <button type="submit" class="btn btn-primary">Go To Login »</button>
-                                                </div>
-                                            </form>
-                                        </div>
-
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
+                                               data-container="body" type="button" data-html="true" 
+                                               href="./RegistroUsuarios.php" id="hola">Registrarse</a></li>                                    
                                         <li><a  href="#"></a></li>
-
                                     </ul>
                                 </div>
                             </div>

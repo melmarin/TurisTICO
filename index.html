@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Travel GUIDE</title>
+        <title>TurisTico</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Your description">
@@ -106,8 +106,8 @@
                     <div class="search-form-wrapper clearfix">
                         <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >
                             <input type="text" name="s" value='Search' onBlur="if (this.value == '')
-                                                            this.value = 'Search'" onFocus="if (this.value == 'Search')
-                                                                        this.value = ''">
+                                        this.value = 'Search'" onFocus="if (this.value == 'Search')
+                                                    this.value = ''">
                             <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                         </form>
                     </div>
@@ -156,21 +156,9 @@
                                             </form>
                                         </div>
 
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" data-container="body" type="button" data-html="true" href="#" id="hola">Registrarse</a></li>
-                                        <div id="hola-mundo" class="hide">
-                                            <form class="form-inline" role="form">
-                                                <div class="form-group">
-                                                    <select class="form-control">
-                                                        <option>NA</option>
-                                                        <option>RU</option>
-                                                        <option>EU</option>
-                                                        <option>SEA</option>
-                                                    </select>
-
-                                                    <button type="submit" class="btn btn-primary">Go To Login »</button>
-                                                </div>
-                                            </form>
-                                        </div>
+                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
+                                               data-container="body" type="button" data-html="true" 
+                                               href="./RegistroUsuarios.php" id="hola">Registrarse</a></li>                                    
                                         <li><a  href="#"></a></li>
                                     </ul>
                                 </div>
@@ -180,58 +168,58 @@
                 </div>
             </div>
             <div class="modal fade" id="myModal" role="dialog"  class="tab-pane fade n active">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div  style="background-color:#1da5a6;"   class="modal-header">
-                            <button type="submit" class="close" data-dismiss="modal">&times;</button>
-                            <h4 style="color:white;" class="modal-title center">Registrarse</h4>
-                        </div>
-                            
-                                <form role="Form" method="POST" action="" accept-charset="UTF-8">
-                                    <div class="form-group">
-                                        <input type="text" name="email" placeholder="Usuario" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" placeholder="Contraseña..." class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password2" placeholder="Verifica Contraseña..." class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                    </div>
-                                </form>
-                                <div>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                </div>
-
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div  style="background-color:#1da5a6;"   class="modal-header">
+                        <button type="submit" class="close" data-dismiss="modal">&times;</button>
+                        <h4 style="color:white;" class="modal-title center">Registrarse</h4>
                     </div>
-                
+
+                    <form role="Form" method="POST" action="" accept-charset="UTF-8">
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Usuario" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Contraseña..." class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password2" placeholder="Verifica Contraseña..." class="form-control">
+                        </div>
+                        <div class="form-group">
+                        </div>
+                    </form>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+
+                </div>
+
             </div>
             <div class="modal fade" id="myModalIncio" role="dialog"  class="tab-pane fade">
                 <div class="modal-dialog">
                     <!-- Modal content-->
-                        <div  style="background-color:#1da5a6;"   class="modal-header">
-                            <button type="submit" class="close" data-dismiss="modal">&times;</button>
+                    <div  style="background-color:#1da5a6;"   class="modal-header">
+                        <button type="submit" class="close" data-dismiss="modal">&times;</button>
 
-                            <h4 style="color:white;" class="modal-title center">Iniciar Sessión</h4>
+                        <h4 style="color:white;" class="modal-title center">Iniciar Sessión</h4>
+                    </div>
+                    <form role="Form" method="POST" action="" accept-charset="UTF-8">
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Usuario" class="form-control">
                         </div>
-                                <form role="Form" method="POST" action="" accept-charset="UTF-8">
-                                    <div class="form-group">
-                                        <input type="text" name="email" placeholder="Usuario" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" placeholder="Contraseña..." class="form-control">
-                                    </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Contraseña..." class="form-control">
+                        </div>
 
-                                    <div class="form-group">
-                                    </div>
-                                </form>
-                                <div >
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                        <div class="form-group">
+                        </div>
+                    </form>
+                    <div >
+                        <button type="submit" class="btn btn-primary">Enviar</button>
 
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                </div>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
             <div id="slider_wrapper">
@@ -414,8 +402,9 @@
                                         <li><a href="#"><img src="View/images/social_ic4.png"></a></li>
                                         <li><a href="#"><img src="View/images/social_ic5.png"></a></li>
                                         <li><a href="#"><img src="View/images/social_ic6.png"></a></li>
-                                    </ul>
+                                    </ul>                                    
                                 </div>
+                                <div class="bot1_title"><a href="./MapadelSitio.php">Mapa del Sitio</a></div>                                 
                             </div>
                             <div class="span3">
                                 <div class="bot1_title">Destinos</div>
@@ -442,6 +431,24 @@
                                     E-mail: <a href="#">turisTico@gmail.com</a>
                                 </div>
                             </div>
+                            <div class="span3">
+                                <div class="bot1_title">Creditos</div>
+                                <div class="bot1_txt1">
+                                    <span style="font-size: 14px;">
+                                        Elaboración del sítio web:</span><br>
+                                    Danny Zúñiga Barrantes,<br>
+                                    Fabián Quirós Masís,<br>
+                                    Lucrecia Zúñiga Sáenz,<br>
+                                    Melvin Marín Navarro. <br>
+
+                                    <span style="font-size: 14px;">
+                                        Desarrollado para:</span><br>
+                                    Universidad de Costa Rica<br>
+                                    Sede del Atlántico<br>
+                                    Recinto de Paraíso<br>    
+                                    Sistemas Expertos
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -453,48 +460,36 @@
 </html>
 
 <script type="text/javascript">
-                                                    $(function () {
-                                                        $('.js-tooltip-trigger').each(function (ind, ele) {
-                                                            var $ele = $(ele),
-                                                                    $ttSpan = $ele.next('.js-tooltip'),
-                                                                    ttHtml = $ttSpan.html(),
-                                                                    rndID = 'ttid' + String(Math.random()).substr(2);
+                                $(function () {
+                                    $('.js-tooltip-trigger').each(function (ind, ele) {
+                                        var $ele = $(ele),
+                                                $ttSpan = $ele.next('.js-tooltip'),
+                                                ttHtml = $ttSpan.html(),
+                                                rndID = 'ttid' + String(Math.random()).substr(2);
 
-                                                            $ttSpan.attr('id', rndID).removeAttr('style').html('');
+                                        $ttSpan.attr('id', rndID).removeAttr('style').html('');
 
-                                                            $ele.popover({
-                                                                html: true,
-                                                                trigger: 'focus',
-                                                                placement: 'bottom',
-                                                                container: '#' + rndID,
-                                                                content: ttHtml
-                                                            });
-                                                        });
-                                                    });
+                                        $ele.popover({
+                                            html: true,
+                                            trigger: 'focus',
+                                            placement: 'bottom',
+                                            container: '#' + rndID,
+                                            content: ttHtml
+                                        });
+                                    });
+                                });
+                                $("[id=login]").popover({
+                                    html: true,
+                                    content: function () {
+                                        return $('#popover-content').html();
+                                    }
+                                });
 
-
-
-
-
-
-
-
-
-
-
-
-                                                    $("[id=login]").popover({
-                                                        html: true,
-                                                        content: function () {
-                                                            return $('#popover-content').html();
-                                                        }
-                                                    });
-
-                                                    $("[id=hola]").popover({
-                                                        html: true,
-                                                        content: function () {
-                                                            return $('#hola-mundo').html();
-                                                        }
-                                                    });
+                                $("[id=hola]").popover({
+                                    html: true,
+                                    content: function () {
+                                        return $('#hola-mundo').html();
+                                    }
+                                });
 
 </script>
