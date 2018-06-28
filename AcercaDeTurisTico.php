@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC>
 
 <?php include './HomeHeader.php'; ?>
+<body>
 <style>
     p {
         display: block; 
@@ -63,5 +64,6 @@
         </div>
     </div>
 </div>
+</body>
 
 </html>

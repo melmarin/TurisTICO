@@ -100,7 +100,7 @@
 
     <body class="main">
         <div id="main">
-                      <div class="top1 clearfix">
+              <div class="top1 clearfix">
                 <header><div class="logo_wrapper log"><a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt=""></a></div></header>
                 <div class="top2 clearfix">
                     <div class="search-form-wrapper clearfix">
@@ -166,33 +166,7 @@
             <div class="modal fade" id="myModal" role="dialog"  class="tab-pane fade n active">
                 <div class="modal-dialog">
                     <!-- Modal content-->
-                    <div class="modal-content">
-                        <div  style="background-color:#1da5a6;"   class="modal-header">
-                            <button type="submit" class="close" data-dismiss="modal">&times;</button>
-                            <h4 style="color:white;" class="modal-title center">Registrarse</h4>
-                        </div>
-                        <div style="background-color:#2a2a2a;" class="modal-body">
-                            <div class = "center">
-                                <form role="Form" method="POST" action="" accept-charset="UTF-8">
-                                    <div class="form-group">
-                                        <input type="text" name="email" placeholder="Usuario" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" placeholder="Contraseña..." class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password2" placeholder="Verifica Contraseña..." class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                    </div>
-                                </form>
-                                <div>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="modal fade" id="myModalIncio" role="dialog"  class="tab-pane fade">

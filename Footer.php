@@ -26,7 +26,6 @@
                                     <li><a href="#">Guanacaste</a></li>
                                     <li><a href="#">Puntarenas</a></li>
                                     <li><a href="#">Limon</a></li>
-
                                 </ul>
                             </div>
 

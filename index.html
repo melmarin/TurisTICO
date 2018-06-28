@@ -147,12 +147,8 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Password</label>
                                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                </div>
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>                                               
+                                                <button type="submit" onclick="login()" class="btn btn-primary">Ingresar</button>
                                             </form>
                                         </div>
 
@@ -460,36 +456,59 @@
 </html>
 
 <script type="text/javascript">
-                                $(function () {
-                                    $('.js-tooltip-trigger').each(function (ind, ele) {
-                                        var $ele = $(ele),
-                                                $ttSpan = $ele.next('.js-tooltip'),
-                                                ttHtml = $ttSpan.html(),
-                                                rndID = 'ttid' + String(Math.random()).substr(2);
+                                                    $(function () {
+                                                        $('.js-tooltip-trigger').each(function (ind, ele) {
+                                                            var $ele = $(ele),
+                                                                    $ttSpan = $ele.next('.js-tooltip'),
+                                                                    ttHtml = $ttSpan.html(),
+                                                                    rndID = 'ttid' + String(Math.random()).substr(2);
 
-                                        $ttSpan.attr('id', rndID).removeAttr('style').html('');
+                                                            $ttSpan.attr('id', rndID).removeAttr('style').html('');
 
-                                        $ele.popover({
-                                            html: true,
-                                            trigger: 'focus',
-                                            placement: 'bottom',
-                                            container: '#' + rndID,
-                                            content: ttHtml
-                                        });
-                                    });
-                                });
-                                $("[id=login]").popover({
-                                    html: true,
-                                    content: function () {
-                                        return $('#popover-content').html();
-                                    }
-                                });
+                                                            $ele.popover({
+                                                                html: true,
+                                                                trigger: 'focus',
+                                                                placement: 'bottom',
+                                                                container: '#' + rndID,
+                                                                content: ttHtml
+                                                            });
+                                                        });
+                                                    });
+                                                    $("[id=login]").popover({
+                                                        html: true,
+                                                        content: function () {
+                                                            return $('#popover-content').html();
+                                                        }
+                                                    });
 
-                                $("[id=hola]").popover({
-                                    html: true,
-                                    content: function () {
-                                        return $('#hola-mundo').html();
-                                    }
-                                });
+                                                    $("[id=hola]").popover({
+                                                        html: true,
+                                                        content: function () {
+                                                            return $('#hola-mundo').html();
+                                                        }
+                                                    });
+                                                    function login() {
 
+                                                        correo = document.getElementById('exampleInputEmail1').value;                                                       
+                                                        pass = document.getElementById('exampleInputPassword1').value;
+
+                                                        var parametros =
+                                                                {
+                                                                    "correo": correo,                                                                    
+                                                                    "pass": pass
+                                                                };
+
+                                                        $.ajax({
+                                                            url: './Controller/LoginController.php',
+                                                            type: 'POST',
+                                                            dataType: 'text',
+                                                            data: parametros
+                                                        }).done(function (resp) {
+                                                            alert(resp);
+                                                            window.location = "indexLogin.php";
+                                                        }).fail(function (error, textStatus, errorThrown) {
+                                                            console.log(error.status); //Check console for output
+                                                            //$("#loadIMg").hide();//#datos es un div
+                                                        });
+                                                    }
 </script>
