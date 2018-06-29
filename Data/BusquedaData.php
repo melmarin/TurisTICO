@@ -32,6 +32,9 @@ class BusquedaData {
     private $frecuenciasRent;
     private $frecuenciasTrans;
     private $frecuenciasTema;
+    
+    //Euclides
+    private $arrayDistancias = [];
 
     //Constantes
     const m = 3; //Cantidad de clases(eventos)
@@ -42,17 +45,12 @@ class BusquedaData {
         $this->con = new \ConexionDB();
     }
     
-    public function getEmpresas(){
-        $query = "Select * From empresa Limit 15";
-        $this->datos = $this->con->consultaRetorno($query);
-        while ($row = $this->datos->fetch(\PDO::FETCH_ASSOC)) {
-            $array[] = $row;
-        }
-        return $array;
+    public function getEmpresas($array){
+        print_r($array);
     }
 
 
-    public function calcularDistanciaEuclides($provincia, $precio, $clasificacion) {
+    public function calcularDistanciaBayesEuclides($provincia, $precio, $clasificacion) {
         //Se asignan las probabilidades de cada atributo
         array_push($this->arrayValores, 0.7); // PROVINCIAS
         array_push($this->arrayValores, 0.10); //COSTO DE PAQUETES
@@ -93,7 +91,7 @@ class BusquedaData {
         $this->frecuenciasTema = $this->productoFrecuencias($this->arrayProbFrecuenciaTema); 
         
         // Se determina el resultado final que será retornado a la vista
-        return "El resultado por bayes es: " . $this->determinaResultadoBayes();
+        $this->getEmpresas($this->distanciaEuclidiana($provincia, $precio, $clasificacion, $this->determinaResultadoBayes()));
     }
     
      public function asignaFrecuenciasClaseGastro($atributo, $valor) {
@@ -230,5 +228,55 @@ class BusquedaData {
         }
     }
       
+    public function distanciaEuclidiana($provincia, $precio, $clasificacion, $clase){
+        $this->sql = "SELECT id_empresa, provincia, tipo, costo_paquete, puntuacion_hotel FROM empresa_ordenada";
+        
+        $this->datos = $this->con->consultaRetorno($this->sql);
+        while ($row = $this->datos->fetch(\PDO::FETCH_ASSOC)) {
+            $array[] = $row;
+        }
+        
+        $pesoProvincia=2;
+        $pesoTipo =2;
+        $pesoCosto=2;
+        $pesoPuntuacion = 2;
+        $numTemp = 0;
+        $numActual = 0;
+        $filaFinal = "";
+        
+         foreach ($array as $fila) {
+             //sea asigna un peso de forma binaria
+            
+             $idEmpresa = $fila['id_empresa'];
+             
+            if($provincia == $fila['provincia']){
+                $pesoProvincia =1;
+            }
+            
+            if($clase == $fila['tipo']){
+                $pesoTipo =1;
+            }
+            
+             if($precio == $fila['costo_paquete']){
+                $pesoCosto =1;
+            }
+            
+             if($clasificacion == $fila['puntuacion_hotel']){
+                $pesoPuntuacion =1;
+            }
+            
+            //se calculan las diferencias antes de forma binaria
+            $numActual = sqrt(pow($pesoProvincia, 2) + pow($pesoTipo, 2) + pow($pesoCosto, 2) + pow($pesoPuntuacion, 2));
+            array_push($this->arrayDistancias, $idEmpresa, $numActual);    
+            
+             // se reinician los valores
+            $pesoProvincia=2;
+            $pesoTipo =2;
+            $pesoCosto=2;
+            $pesoPuntuacion = 2;
+            }
+            return asort($this->arrayDistancias);
+      
+    }
     
 }

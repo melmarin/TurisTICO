@@ -15,8 +15,7 @@ class BusquedaController {
         if (isset($_GET['busqueda'])) {
 
             if (($_GET['busqueda']) == "calcular") {
-               //$resultados = $this->model->calcularDistanciaEuclides($_POST['provincia'], $_POST['precio'], $_POST['star']);
-               $resultados = $this->model->getEmpresas();
+               $resultados = $this->model->calcularDistanciaBayesEuclides($_POST['provincia'], $_POST['precio'], $_POST['star']);
             }//if formulario
             
              include_once 'index-3.php';
