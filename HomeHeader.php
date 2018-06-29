@@ -122,17 +122,8 @@
                                 <div class="nav-collapse nav-collapse_ collapse">
                                     <!-- Include the above in your HEAD tag -->
                                     <ul class="nav sf-menu clearfix">
-                                        <li><a href="index.html">Inicio</a></li>
-                                        <li class="sub-menu sub-menu-1"><a href="index-3.html">Toures</a>
-                                            <ul>
-                                                <li><a href="index-3.html">San Jose</a></li>
-                                                <li><a href="index-3.html">Alajuela</a></li>
-                                                <li><a href="index-3.html">Cartago</a></li>
-                                                <li><a href="index-3.html">Heredia</a></li>
-                                                <li><a href="index-3.html">Guanacaste</a></li>
-                                                <li><a href="index-3.html">Puntarenas</a></li>
-                                                <li><a href="index-3.html">Limon</a></li>
-                                            </ul>
+                                        <li><a href="?inicio">Inicio</a></li>
+                                        <li class="sub-menu sub-menu-1"><a href="?busqueda">Toures</a>
                                         </li>
                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
                                                data-container="body" type="button" data-html="true" 
