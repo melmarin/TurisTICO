@@ -134,23 +134,10 @@
                                                 <li><a href="index-3.html">Limon</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="AcercaDeTurisTico.php">Acerda de</a></li>
-
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Iniciar Sesión" data-container="body" type="button" data-html="true" href="#" id="login">Iniciar Sesión</a></li>
-                                        <div id="popover-content" class="hide">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Email </label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                                    <small id="emailHelp" class="form-text text-muted"></small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputPassword1">Password</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                </div>                                              
-                                                <button type="submit" class="btn btn-primary">Ingresar</button>
-                                            </form>
-                                        </div>
+                                       <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
+                                               data-container="body" type="button" data-html="true" 
+                                               href="./Login.php" id="hola">Iniciar Sesión</a></li>                                    
+                                        <li><a  href="#"></a></li>
 
                                         <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
                                                data-container="body" type="button" data-html="true" 
@@ -227,3 +214,5 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </body>

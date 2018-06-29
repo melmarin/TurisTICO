@@ -61,8 +61,6 @@
                         </div>
                     </div>
                 </div>
-
-        <script type="text/javascript" src="View/js/bootstrap.js"></script>
     </body>
 </html>
 

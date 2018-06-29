@@ -32,7 +32,7 @@ class UserData {
     function loginUsuario($correo, $pass) {
 
         $query = "SELECT `usuario`.`id_usuario`,`usuario`.`nombre`,
-                `usuario`.`administrador`,`usuario`.`correo`
+                `usuario`.`administrador`
                  FROM `turisticobd`.`usuario`
                  WHERE `usuario`.`correo` = '" . $correo . "' and `usuario`.`password` = '" . $pass . "'";
 
@@ -40,14 +40,16 @@ class UserData {
             die("Connection failed: " . $conn->connect_error);
         }
         $data = mysqli_query($this->conn, $query);
-
+        $resultado;
         if (mysqli_num_rows($data) > 0) {
-            
-        } else {
-            echo "Error: " . $query . "" . mysqli_error($this->conn);
-        }
+            while($row = mysqli_fetch_assoc($data)) {
+              $resultado= "".$row["administrador"];
+            }
+         } else {
+            $resultado = "0 results";
+         }
         $this->conn->close();
-        return $data;
+        return $resultado;
     }
 
 }

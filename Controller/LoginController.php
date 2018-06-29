@@ -7,6 +7,8 @@ $userData = new UserData();
 $correo = $_POST['correo'];
 $pass = $_POST['pass'];
 
- echo $userData->loginUsuario($correo, $pass);
+$respuesta = $userData->loginUsuario($correo, $pass);
+
+echo $respuesta;
 ?>
 

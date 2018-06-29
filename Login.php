@@ -9,17 +9,13 @@
     <div>
         <form name="estilo" method="post" >
             <br>
-            <div class="bot1_txt1"style="text-align: center;"><span style=" font-size: 36px " >Registro</span></div>
+            <div class="bot1_txt1"style="text-align: center;"><span style=" font-size: 36px " >Iniciar Sesión</span></div>
             <br>
             <div style="text-align:  center;" >                
                 <div>
                     <label for="correo" style="font-size: 20px;">Correo: </label>
                     <input id="correo" style=" height: 30px; width: 250px;" type="Text" name="promedio"></td>                        
-                </div>
-                <div>
-                    <label style="font-size: 20px;" for="nombre" >Nombre: </label>
-                    <input id="nombre" style=" height: 30px; width: 250px;" type="Text" name="promedio"><br>
-                </div>
+                </div>               
                 <div>
                     <label style="font-size: 20px;" for="pass" >Contraseña: </label>
                     <input id="pass" style=" height: 30px; width: 250px;" type="password" name="promedio"><br>
@@ -29,7 +25,7 @@
             <br>
             <div style="text-align: center;">
                 <input class="find1" style=" line-height: 30px; margin: 10px; "
-                       value="Aceptar" onclick="registrar()" type="button">
+                       value="Aceptar" onclick="iniciarSession()" type="button">
                 <input class="find1" style=" line-height: 30px; margin: 10px; background: tomato"
                        value="Cancelar"  onclick="" type="button">
             </div>
@@ -42,29 +38,36 @@
     <?php include './Footer.php'; ?>  
 </footer>
 <script language="JavaScript">
-    function registrar() {
-        correo = document.getElementById('correo').value;
-        nombre = document.getElementById('nombre').value;
+    function iniciarSession() {
+        correo = document.getElementById('correo').value;      
         pass = document.getElementById('pass').value;
 
         var parametros =
                 {
-                    "correo": correo,
-                    "nombre": nombre,
+                    "correo": correo,                  
                     "pass": pass
                 };
-               
+         var resultado="";      
         $.ajax({
-            url: './Controller/UsuarioController.php',
+            url: './Controller/LoginController.php',
             type: 'POST',
             dataType: 'text',
+            async: false,
             data: parametros
-        }).done(function (resp) {
-            alert(resp);
-            window.location = "index.php";
+        }).done(function (resp) {            
+            resultado = resp;
+            alert(resultado);
+            //window.location = "index.php";
         }).fail(function (error, textStatus, errorThrown) {
             console.log(error.status); //Check console for output
             //$("#loadIMg").hide();//#datos es un div
         });
+        resultado = resultado.trim();
+        if(resultado === "1" ){
+           window.location = "indexLoginAdmin.php" 
+        } else if(resultado === "0") {
+           window.location = "indexLoginUser.php" 
+        }
+        
     }
 </script>
