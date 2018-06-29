@@ -55,8 +55,7 @@
             async: false,
             data: parametros
         }).done(function (resp) {            
-            resultado = resp;
-            alert(resultado);
+            resultado = resp;           
             //window.location = "index.php";
         }).fail(function (error, textStatus, errorThrown) {
             console.log(error.status); //Check console for output
@@ -67,6 +66,8 @@
            window.location = "indexLoginAdmin.php" 
         } else if(resultado === "0") {
            window.location = "indexLoginUser.php" 
+        } else {
+            alert("Correo o contraseña incorrectos. Por favor verificarlos!");
         }
         
     }
