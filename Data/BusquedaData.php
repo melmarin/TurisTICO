@@ -257,7 +257,7 @@ class BusquedaData {
                 $pesoTipo =1;
             }
             
-             if($precio == $fila['costo_paquete']){
+             if(intdiv(intval($precio), 250) == $fila['costo_paquete']){
                 $pesoCosto =1;
             }
             
@@ -275,7 +275,7 @@ class BusquedaData {
             $pesoCosto=2;
             $pesoPuntuacion = 2;
             }
-            return asort($this->arrayDistancias);
+            return sort($this->arrayDistancias);
       
     }
     
