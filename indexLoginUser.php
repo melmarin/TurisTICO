@@ -1,16 +1,14 @@
 <!DOCTYPE html PUBLIC>
 <head>
 
-    <?php include './HomeHeader.php'; ?>    
+    <?php include './LoginHeaderUser.php'; ?>    
 </head>
 <!-- ####################################################################################################### -->
 <body class="main">
-    <div class="modal fade" id="myModal" role="dialog"  class="tab-pane fade n active">
-        <!-- Modal content-->
-        <div class="modal-content" style=" color: #888">            
-
-        </div> 
+    <div class="bot1_txt1"style="text-align: center;">
+        <span style=" font-size: 36px " >Bienvenid@</span>
     </div>
+    <br>
 </body>
 <!-- ####################################################################################################### -->
 <footer>

@@ -2,7 +2,7 @@
 
 include_once '../ConfiguracionBD/ConexionBD.php';
 
-class UserData {
+class EmpresaData {
 
     private $conn;
     private $conexion;
@@ -12,7 +12,7 @@ class UserData {
         $this->conn = $conexion->conectar();
     }
 
-    function insertUsuario($correo, $nombre, $pass) {
+    function insertarEmpresa($correo, $nombre, $pass) {
 
         $query = "INSERT INTO usuario (nombre,password,administrador,correo) "
                 . "values ('" . $nombre . "','" . $pass . "',0,'" . $correo . "')";
