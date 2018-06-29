@@ -40,7 +40,7 @@ class ConexionDB {
     
     public function conectar(){
 	try {
-            $this->con = new \PDO('mysql:host='.$this->datos['host'].';dbname=tarea1_b03675', $this->datos['user'], $this->datos['pass']);
+            $this->con = new \PDO('mysql:host='.$this->datos['host'].';dbname=turisticobd', $this->datos['user'], $this->datos['pass']);
             //echo 'Conectado a '.$this->con->getAttribute(\PDO::ATTR_CONNECTION_STATUS);
         } catch(PDOException $ex) {
             echo 'Error conectando a la BBDD. '.$ex->getMessage(); 

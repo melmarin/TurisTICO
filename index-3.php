@@ -107,21 +107,14 @@
             <div id="content">
                 <div class="container">
                     <div class="row">
-
+                        <form action="?busqueda=calcular" method="POST">
                         <div class="span4">
 
                             <h2>Filtros</h2>
                             <div class="filter">
                                 <div class="stars">
-                                    <br><br>
-                                      <select  class="nice-select wide">
-                                        <option data-display="Actividad">Actividad</option>
-                                        <option value="Gastronomia">Gastronomía</option>
-                                        <option value="'Rent a Car'">Rent a Car</option>
-                                        <option value="Transporte Acuatico y Aereo">Transporte acuático y aéreo</option>
-                                         <option value="'Actividades tematicas'">Actividades temáticas</option>
                                     </select>
-                                    <select  class="nice-select wide">
+                                    <select name="provincia" class="nice-select wide">
                                         <option data-display="Provincia">Provincia</option>
                                         <option value="San José">San Jose</option>
                                         <option value="Heredia">Heredia</option>
@@ -132,15 +125,15 @@
                                         <option value="Puntarenas">Puntarenas</option>
                                     </select>
                                     <br><br><br><br>
-                                    <center><label for="Distancia">Precio</label></center>
-                                    <input type="range" id="Precio" value="0" step="25" min="0" max="2500">
+                                    <center><label for="Precio">Precio</label></center>
+                                    <input type="range" id="Precio" name="precio" value="0" step="25" min="0" max="2500">
                                     <div class="">
                                         <small class="min pull-left">Min</small>
                                         <small class="max pull-right">Max</small>
                                     </div>
                                     <br><br>
                                     <center><label for="Distancia">Distancia</label></center>
-                                    <input type="range" id="Distancia" value="0" step="25" min="0" max="12600">
+                                    <input type="range" id="Distancia" value="0" step="25" min="0" max="1000">
                                     <div class="">
                                         <small class="min pull-left">Min</small>
                                         <small class="max pull-right">Max</small>
@@ -160,24 +153,31 @@
                                     </a>
                                   
                                     <div class="aling-star">
-                                        <form action="">
+                                        <form action="#">
+                        
                                             <center><label style="margin-top:5em;">Clasificación</label></center>
-                                            <input class="star star-5" id="star-5-2" type="radio" name="star"/>
+                                            <input value="5" class="star star-5" id="star-5-2" type="radio" name="star"/>
                                             <label class="star star-5" for="star-5-2"></label>
-                                            <input class="star star-4" id="star-4-2" type="radio" name="star"/>
+                                            <input  value="4" class="star star-4" id="star-4-2" type="radio" name="star"/>
                                             <label class="star star-4" for="star-4-2"></label>
-                                            <input class="star star-3" id="star-3-2" type="radio" name="star"/>
+                                            <input  value="3" class="star star-3" id="star-3-2" type="radio" name="star"/>
                                             <label class="star star-3" for="star-3-2"></label>
-                                            <input class="star star-2" id="star-2-2" type="radio" name="star"/>
+                                            <input  value="2" class="star star-2" id="star-2-2" type="radio" name="star"/>
                                             <label class="star star-2" for="star-2-2"></label>
-                                            <input class="star star-1" id="star-1-2" type="radio" name="star"/>
+                                            <input  value="1" class="star star-1" id="star-1-2" type="radio" name="star"/>
                                             <label class="star star-1" for="star-1-2"></label>
+                                              
                                         </form>
                                     </div>
                                 </div>
+                               
+                                <button type="submit" class="myButton">Buscar</button>
                             </div>
+                            <!--<h2><?php if (isset($resultados)) {
+                                echo $resultados;
+                                } ?></h2>-->
                         </div>
-
+                            </form>
                         <div class="span8">
 
                             <h1>Tus Destinos</h1>
@@ -189,153 +189,63 @@
                             <p>TU POSICION ACTUAL</p>
 
                             <div class="div_items">
-                                <div class="thumb3">
-                                    <div class="thumbnail clearfix">
-                                        <figure class="img-polaroid"><img src="View/images/cr/item1.jpg" alt=""></figure>
-                                        <div class="caption">
-                                            <span class="sitio-name">Playas del coco</span>
-                                            <span class="sitio-item__stars">
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
+                                 <?php
+                                if (isset($resultados)) {
+                                    foreach ($resultados as $resultado) {
+                                        ?> 
+                                        <div class="thumb3">
+                                            <div class="thumbnail clearfix">
+                                                <figure class="img-polaroid"><img src="View/images/cr/item1.jpg" alt=""></figure>
+                                                <div class="caption">
+                                                    <span class="sitio-name"><?php echo $resultado['nombre']; ?></span>
+                                                    <span class="sitio-item__stars">
+                                                        <span>
+                                                            <span class="icon-ic hotel-item__star">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
+                                                                <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <span class="icon-ic hotel-item__star">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
+                                                                <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <span class="icon-ic hotel-item__star">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
+                                                                <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <span class="icon-ic hotel-item__star">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
+                                                                <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
+                                                                </path>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
                                                     </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <p id="p1">
-                                                <span class="icon-ic"><svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" baseProfile="tiny" viewBox="3 3 25 25"><path class="svg-color--primary" fill="#37454D" d="M18 8.2C17.6 5.3 15 3 12 3S6.4 5.3 6 8.2V9c0 .7.1 1.4.4 2.1l.6 1.2 4.1 8.2c.2.3.5.5.9.5s.7-.2.9-.5l4.1-8.2.6-1.2c.3-.7.4-1.4.4-2.1v-.8zM12 13c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path></svg></span>
-                                                <span class="hotel-item__value"><span class="item__distance">Sardinal, cantón de Carrillo, de la provincia de Guanacaste</span></span>
-                                            </p>
-                                            <p>
-                                                <span class="hotel-item__price hotel-item__price--best">₡35.000 por persona</span>
-                                                <button href="#" class="myButton" data-toggle="modal" data-target="#myModal">ver más</button>
+                                                    <p id="p1">
+                                                        <span class="icon-ic"><svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" baseProfile="tiny" viewBox="3 3 25 25"><path class="svg-color--primary" fill="#37454D" d="M18 8.2C17.6 5.3 15 3 12 3S6.4 5.3 6 8.2V9c0 .7.1 1.4.4 2.1l.6 1.2 4.1 8.2c.2.3.5.5.9.5s.7-.2.9-.5l4.1-8.2.6-1.2c.3-.7.4-1.4.4-2.1v-.8zM12 13c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path></svg></span>
+                                                        <span class="hotel-item__value"><span class="item__distance"><?php echo $resultado['direccion']; ?></span></span>
+                                                    </p>
+                                                    <p>
+                                                        <span class="hotel-item__price hotel-item__price--best">¢ <?php echo $resultado['costo_paquete']; ?> por persona</span>
+                                                        <button href="#" class="myButton" data-toggle="modal" data-target="#myModal">ver más</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="thumb3">
-                                    <div class="thumbnail clearfix">
-                                        <figure class="img-polaroid"><img src="View/images/cr/punt.jpg" alt=""></figure>
-                                        <div class="caption">
-                                            <span class="sitio-name">Puntarenas</span>
-                                            <span class="sitio-item__stars">
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <p id="p1">
-                                                <span class="icon-ic"><svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" baseProfile="tiny" viewBox="3 3 25 25"><path class="svg-color--primary" fill="#37454D" d="M18 8.2C17.6 5.3 15 3 12 3S6.4 5.3 6 8.2V9c0 .7.1 1.4.4 2.1l.6 1.2 4.1 8.2c.2.3.5.5.9.5s.7-.2.9-.5l4.1-8.2.6-1.2c.3-.7.4-1.4.4-2.1v-.8zM12 13c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path></svg></span>
-                                                <span class="hotel-item__value"><span class="item__distance">Puntarenas,en el golfo de Nicoya</span></span>
-                                            </p>
-                                            <p>
-                                                <span class="hotel-item__price hotel-item__price--best">₡25.000 por persona      </span>
-                                                <button href="#" class="myButton" data-toggle="modal" data-target="#myModal">ver más</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="thumb3">
-                                    <div class="thumbnail clearfix">
-                                        <figure class="img-polaroid"><img src="images/cr/item5.jpg" alt=""></figure>
-                                        <div class="caption">
-                                            <span class="sitio-name">Manuel Antonio</span>
-                                            <span class="sitio-item__stars">
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span>
-                                                    <span class="icon-ic hotel-item__star">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                        </path>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <p id="p1">
-                                                <span class="icon-ic"><svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" baseProfile="tiny" viewBox="3 3 25 25"><path class="svg-color--primary" fill="#37454D" d="M18 8.2C17.6 5.3 15 3 12 3S6.4 5.3 6 8.2V9c0 .7.1 1.4.4 2.1l.6 1.2 4.1 8.2c.2.3.5.5.9.5s.7-.2.9-.5l4.1-8.2.6-1.2c.3-.7.4-1.4.4-2.1v-.8zM12 13c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path></svg></span>
-                                                <span class="hotel-item__value"><span class="item__distance">Provincia de Puntarenas, Cantón de Aguirre</span></span>
-                                            </p>
-                                            <p>
-                                                <span class="hotel-item__price hotel-item__price--best">₡45.000 por persona      </span>
-                                                <button href="#" class="myButton" data-toggle="modal" data-target="#myModal">ver más</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
 
