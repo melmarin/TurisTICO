@@ -139,6 +139,7 @@
                                             <small class="max pull-right">Max</small>
                                         </div>
                                         <center><label style="margin-top:5em;">Top</label></center>
+<<<<<<< HEAD
                                         <a href="https://www.w3schools.com" class="turist">
                                             <img class="rounded" alt="W3Schools" src="View/assets/vo.svg" width="100" height="100">
                                         </a>
@@ -149,6 +150,18 @@
                                             <img class="rounded" alt="W3Schools" src="View/assets/ri.svg" width="100" height="100">
                                         </a>
                                         <a href="https://www.w3schools.com" class="turist">
+=======
+                                        <a href="#" class="turist">
+                                            <img class="rounded" alt="W3Schools" src="View/assets/vo.svg" width="100" height="100">
+                                        </a>
+                                        <a href="#" class="turist">
+                                            <img class="rounded" alt="W3Schools" src="View/assets/fo.svg" width="100" height="100">
+                                        </a>
+                                        <a href="#" class="turist">
+                                            <img class="rounded" alt="W3Schools" src="View/assets/ri.svg" width="100" height="100">
+                                        </a>
+                                        <a href="#" class="turist">
+>>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
                                             <img class="rounded" alt="W3Schools" src="View/assets/be.svg" width="100" height="100">
                                         </a>
 
@@ -202,8 +215,13 @@
                                                     <span class="sitio-name"><?php echo $resultado['nombre']; ?></span>
                                                     <span class="sitio-item__stars">
                                                         <?php
+<<<<<<< HEAD
                                                              $puntuacion = intval($resultado['puntuacion_usuario']);
                                                             for ($i = 1; $i <=$puntuacion ; $i++){
+=======
+                                                        $puntuacion = intval($resultado['puntuacion_usuario']);
+                                                        for ($i = 1; $i <= $puntuacion; $i++) {
+>>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
                                                             ?> 
                                                             <span>
                                                                 <span class="icon-ic hotel-item__star">
@@ -214,7 +232,11 @@
                                                                 </span>
                                                             </span>
                                                             <?php
+<<<<<<< HEAD
                                                              }
+=======
+                                                        }
+>>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
                                                         ?>
                                                     </span>
                                                     <p id="p1">
@@ -292,6 +314,14 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
         <div class="bot1">
             <div class="container">
                 <div class="row">
@@ -307,7 +337,10 @@
                                 <li><a href="#"><img src="View/images/social_ic6.png"></a></li>
                             </ul>
                         </div>
+<<<<<<< HEAD
                         <div class="bot1_title"><a href="./MapadelSitio.php">Mapa del Sitio</a></div>  
+=======
+>>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
                     </div>
                     <div class="span3">
                         <div class="bot1_title">Destinos</div>
@@ -353,10 +386,17 @@
         <script type="text/javascript" src="View/js/superfish.js"></script>
         <script type="text/javascript" src="View/js/jquery.ui.totop.js"></script>
         <script>
+<<<<<<< HEAD
                                 $(document).ready(function () {
                                     $('select:not(.ignore)').niceSelect();
                                     FastClick.attach(document.body);
                                 });
+=======
+                            $(document).ready(function () {
+                                $('select:not(.ignore)').niceSelect();
+                                FastClick.attach(document.body);
+                            });
+>>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
         </script>
 
         <script>

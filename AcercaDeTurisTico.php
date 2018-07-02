@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC>
 
 <?php include './HomeHeader.php'; ?>
+<!--<?php include '/opt/lampp/htdocs/estudiantes/TurisTICO/HomeHeader.php'; ?>-->
 <body>
 <style>
     p {

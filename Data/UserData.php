@@ -1,6 +1,7 @@
 <?php
 
-include_once '../ConfiguracionBD/ConexionBD.php';
+include_once 'ConfiguracionBD/ConexionBD.php';
+//include_once '/opt/lampp/htdocs/estudiantes/TurisTICO/ConfiguracionBD/ConexionBD.php';
 
 class UserData {
 

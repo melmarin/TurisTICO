@@ -12,6 +12,7 @@
  * @author melma
  */
 require_once 'ConfiguracionBD/ConexionBD.php';
+//require_once '/opt/lampp/htdocs/estudiantes/TurisTICO/ConfiguracionBD/ConexionBD.php';
 
 class BusquedaData {
     
@@ -44,11 +45,6 @@ class BusquedaData {
      public function __construct() {
         $this->con = new \ConexionDB();
     }
-    
-    public function getEmpresas($array){
-        print_r($array);
-    }
-
 
     public function calcularDistanciaBayesEuclides($provincia, $precio, $clasificacion) {
         //Se asignan las probabilidades de cada atributo
@@ -91,7 +87,8 @@ class BusquedaData {
         $this->frecuenciasTema = $this->productoFrecuencias($this->arrayProbFrecuenciaTema); 
         
         // Se determina el resultado final que será retornado a la vista
-        $this->getEmpresas($this->distanciaEuclidiana($provincia, $precio, $clasificacion, $this->determinaResultadoBayes()));
+        return $this->distanciaEuclidiana($provincia, $precio, $clasificacion, $this->determinaResultadoBayes());
+        
     }
     
      public function asignaFrecuenciasClaseGastro($atributo, $valor) {
@@ -229,14 +226,14 @@ class BusquedaData {
     }
       
     public function distanciaEuclidiana($provincia, $precio, $clasificacion, $clase){
-        $this->sql = "SELECT id_empresa, provincia, tipo, costo_paquete, puntuacion_hotel FROM empresa_ordenada";
+        $this->sql = "SELECT id_empresa, provincia, tipo, costo_paquete, puntuacion_hotel FROM empresa";
         
         $this->datos = $this->con->consultaRetorno($this->sql);
         while ($row = $this->datos->fetch(\PDO::FETCH_ASSOC)) {
             $array[] = $row;
         }
         
-        $pesoProvincia=2;
+        $pesoProvincia=8;
         $pesoTipo =2;
         $pesoCosto=2;
         $pesoPuntuacion = 2;
@@ -257,26 +254,46 @@ class BusquedaData {
                 $pesoTipo =1;
             }
             
-             if(intdiv(intval($precio), 250) == $fila['costo_paquete']){
+          /*  $costo = intdiv(intval($precio), 250);
+             if($costo == $fila['costo_paquete']){
                 $pesoCosto =1;
-            }
+            }*/
             
              if($clasificacion == $fila['puntuacion_hotel']){
                 $pesoPuntuacion =1;
             }
             
             //se calculan las diferencias antes de forma binaria
-            $numActual = sqrt(pow($pesoProvincia, 2) + pow($pesoTipo, 2) + pow($pesoCosto, 2) + pow($pesoPuntuacion, 2));
-            array_push($this->arrayDistancias, $idEmpresa, $numActual);    
-            
+            $numActual = sqrt(pow($pesoProvincia, 2) + pow($pesoTipo, 2) + pow(($precio - $fila['costo_paquete']), 2) + pow($pesoPuntuacion, 2));
+            //array_push($this->arrayDistancias, $idEmpresa, $numActual);    
+            //INSERTA EN LA BD
+            $this->sql = "UPDATE distancia_clase set distancia = '$numActual'"
+                    . "WHERE id_empresa = '$idEmpresa'";
+            $this->con->consultaSimple($this->sql);
              // se reinician los valores
-            $pesoProvincia=2;
+            $pesoProvincia=8;
             $pesoTipo =2;
             $pesoCosto=2;
             $pesoPuntuacion = 2;
             }
-            return sort($this->arrayDistancias);
       
+            //DEVUELVE LOS 5 RESULTADOS CON MENOR DISTANCIA
+            $this->sql = "SELECT EP.id_empresa,EP.nombre,EP.telefono,EP.direccion,EP.provincia, 
+                EP.puntuacion_usuario,EP.tipo,EP.costo_paquete,EP.puntuacion_hotel,DC.distancia
+                FROM empresa EP inner join distancia_clase DC on EP.id_empresa = DC.id_empresa order by distancia ASC limit 5;";
+            $this->datos = $this->con->consultaRetorno($this->sql);
+            while ($row = $this->datos->fetch(\PDO::FETCH_ASSOC)) {
+                $arrayFinal[] = $row;
+            }
+            return $arrayFinal;
+    }
+    
+    public function insertarDistanciaTabla(){
+        for ($i=1; $i<=200; $i++){
+             //INSERTA EN LA BD
+            $this->sql = "INSERT INTO distancia_clase values ('$i',0)";
+            $this->con->consultaSimple($this->sql);
+        }
     }
     
 }
