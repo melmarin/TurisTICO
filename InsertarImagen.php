@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC>
 <head>
 
-    <?php include './HomeHeader.php'; ?>    
+    <?php include '/opt/lampp/htdocs/estudiantes/TurisTICO/HomeHeader.php'; ?>  
+    <!--<?php include './HomeHeader.php'; ?>  -->
 </head>
 <!-- ####################################################################################################### -->
 <body class="main">
@@ -11,5 +12,6 @@
 </body>
 <!-- ####################################################################################################### -->
 <footer>
-    <?php include './Footer.php'; ?>  
+    <?php include '/opt/lampp/htdocs/estudiantes/TurisTICO/Footer.php'; ?>
+    <!--php include './Footer.php'; ?> -->
 </

@@ -18,20 +18,29 @@ class PrincipalController {
      public function invoke() {
          
          if (isset($_GET['busqueda'])){
-            require_once 'Controller/BusquedaController.php';
+             include('Controller/BusquedaController.php');
+             //include('/opt/lampp/htdocs/estudiantes/TurisTICO/Controller/BusquedaController.php');
             $this->controller = new BusquedaController();
             $this->controller->invoke();
             
          }//if formulario
          
-         elseif (isset($_GET['formulario2'])){
-              include($this->ruta.'controller/Formulario2Controller.php');
-            $this->controller = new Formulario2Controller();
-            $this->controller->invoke();
-         }
+         //PLAYO ARREGLAR LO DEL REDIRECCIONAMIENTO USAR EL CONTROLLER SINO NO FUNCIONA BIEN
+         //PARECE ESO EN LA VISTA TIENE QUE BASARSE EN EL QUE YO HICE 
+         //PUEDO REVISAR EN index-3
+         //FALTA PARA EL LOGIN
+         /*elseif (isset($_GET['login'])){
+            include('./LoginController.php');
+            //include('/opt/lampp/htdocs/estudiantes/TurisTICO/controller/Formulario2Controller.php');
+         }*/
+         
+         //FALTA PARA CRÉDITOS
+         
+         //FALTA PARA REGISTRARSE
          
          else{
-            include_once 'IndexView.php';
+            include('indexView.php');
+            //include('/opt/lampp/htdocs/estudiantes/TurisTICO/indexView.php');
          }
      }
 }
