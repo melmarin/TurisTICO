@@ -1,7 +1,6 @@
 <?php
 
 require_once 'Data/BusquedaData.php';
-//require_once '/opt/lampp/htdocs/estudiantes/TurisTICO/Data/BusquedaData.php';
 
 class BusquedaController {
     

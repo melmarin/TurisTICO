@@ -1,8 +1,59 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once 'Data/EmpresaData.php';
 
+class EmpresaController {
+
+    private $model;
+
+    public function __construct() {
+        $this->model = new EmpresaData();
+    }
+
+     public function invoke() {       
+        if (isset($_GET['empresa'])) {
+
+            if (($_GET['empresa']) == "ingresar") {
+               $resultados = $this->model->insertarEmpresa($_POST['nombre'],
+                       $_POST['telefono'], $_POST['direccion'],$_POST['provincia'],
+                       $_POST['tipo'],$_POST['costo'],$_POST['puntuacion']);
+            }//if formulario
+            include_once 'indexLoginAdmin.php';            
+        }
+        /*if (isset($_GET['empresa'])) {
+
+            if (($_GET['empresa']) == "buscar") {
+               $resultados = $this->model->getEmpresas();
+            }//if formulario
+            include_once 'indexLoginAdmin.php';
+            //include_once '/opt/lampp/htdocs/estudiantes/TurisTICO/index-3.php';
+        }
+        if (isset($_GET['empresa'])) {
+
+            if (($_GET['empresa']) == "obtenerempresa") {
+               $resultados = $this->model->getEmpresa($_POST['idEmpresa']);
+            }//if formulario
+            include_once 'indexLoginAdmin.php';
+            //include_once '/opt/lampp/htdocs/estudiantes/TurisTICO/index-3.php';
+        }
+          if (isset($_GET['empresa'])) {
+
+            if (($_GET['empresa']) == "actulizar") {
+               $resultados = $this->model->actualizarEmpresa($_POST['idEmpresa'],$_POST['nombre'],
+                       $_POST['telefono'], $_POST['direccion'],$_POST['provincia'],
+                       $_POST['tipo'],$_POST['costo'],$_POST['promedio']);
+            }//if formulario
+            include_once 'indexLoginAdmin.php';
+            //include_once '/opt/lampp/htdocs/estudiantes/TurisTICO/index-3.php';
+        }
+          if (isset($_GET['empresa'])) {
+
+            if (($_GET['empresa']) == "eliminar") {
+               $resultados = $this->model->eliminarEmpresa($_POST['idEmpresa']);
+            }//if formulario
+            include_once 'indexLoginAdmin.php';
+            //include_once '/opt/lampp/htdocs/estudiantes/TurisTICO/index-3.php';
+        }*/
+    }
+}//Empresa
+?>

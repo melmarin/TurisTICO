@@ -1,14 +1,13 @@
 <!DOCTYPE html PUBLIC>
 <head>
 
-    <?php include './HomeHeader.php'; ?>
-    <!--<?php include '/opt/lampp/htdocs/estudiantes/TurisTICO/HomeHeader.php'; ?>-->    
+    <?php include './HomeHeader.php'; ?>       
 </head>
 <!-- ####################################################################################################### -->
 <body class="main">
     <!-- Modal content-->
     <div>
-        <form name="login" action="?login=ingresar" method="post" >
+        <form action="?login=ingresar" method="POST" >
             <br>
             <div class="bot1_txt1"style="text-align: center;"><span style=" font-size: 36px " >Iniciar Sesión</span></div>
             <br>
@@ -24,17 +23,16 @@
             </div>
             <br>
             <br>
-            </form>
             <div style="text-align: center;">
                 <button class="find1" style=" line-height: 30px; margin: 10px;" type="submit">Aceptar</button>
                 <input class="find1" style=" line-height: 30px; margin: 10px; background: tomato"
                        value="Cancelar"  onclick="" type="button">
-            </div>       
+            </div>  
+        </form>                
     </div>    
 </body>
 <!-- ####################################################################################################### -->
 <footer>
-    <?php include './Footer.php'; ?>  
-    <!--<?php include '/opt/lampp/htdocs/estudiantes/TurisTICO/Footer.php'; ?> -->
+    <?php include './Footer.php'; ?>      
 </footer>
 

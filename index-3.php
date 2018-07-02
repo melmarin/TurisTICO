@@ -109,7 +109,6 @@
                     <div class="row">
                         <form action="?busqueda=calcular" method="POST">
                             <div class="span4">
-
                                 <h2>Filtros</h2>
                                 <div class="filter">
                                     <div class="stars">
@@ -139,7 +138,7 @@
                                             <small class="max pull-right">Max</small>
                                         </div>
                                         <center><label style="margin-top:5em;">Top</label></center>
-<<<<<<< HEAD
+
                                         <a href="https://www.w3schools.com" class="turist">
                                             <img class="rounded" alt="W3Schools" src="View/assets/vo.svg" width="100" height="100">
                                         </a>
@@ -150,38 +149,38 @@
                                             <img class="rounded" alt="W3Schools" src="View/assets/ri.svg" width="100" height="100">
                                         </a>
                                         <a href="https://www.w3schools.com" class="turist">
-=======
-                                        <a href="#" class="turist">
-                                            <img class="rounded" alt="W3Schools" src="View/assets/vo.svg" width="100" height="100">
-                                        </a>
-                                        <a href="#" class="turist">
-                                            <img class="rounded" alt="W3Schools" src="View/assets/fo.svg" width="100" height="100">
-                                        </a>
-                                        <a href="#" class="turist">
-                                            <img class="rounded" alt="W3Schools" src="View/assets/ri.svg" width="100" height="100">
-                                        </a>
-                                        <a href="#" class="turist">
->>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
-                                            <img class="rounded" alt="W3Schools" src="View/assets/be.svg" width="100" height="100">
-                                        </a>
 
-                                        <div class="aling-star">
-                                            <form action="#">
+                                            <a href="#" class="turist">
+                                                <img class="rounded" alt="W3Schools" src="View/assets/vo.svg" width="100" height="100">
+                                            </a>
+                                            <a href="#" class="turist">
+                                                <img class="rounded" alt="W3Schools" src="View/assets/fo.svg" width="100" height="100">
+                                            </a>
+                                            <a href="#" class="turist">
+                                                <img class="rounded" alt="W3Schools" src="View/assets/ri.svg" width="100" height="100">
+                                            </a>
+                                            <a href="#" class="turist">
 
-                                                <center><label style="margin-top:5em;">Clasificación</label></center>
-                                                <input value="5" class="star star-5" id="star-5-2" type="radio" name="star"/>
-                                                <label class="star star-5" for="star-5-2"></label>
-                                                <input  value="4" class="star star-4" id="star-4-2" type="radio" name="star"/>
-                                                <label class="star star-4" for="star-4-2"></label>
-                                                <input  value="3" class="star star-3" id="star-3-2" type="radio" name="star"/>
-                                                <label class="star star-3" for="star-3-2"></label>
-                                                <input  value="2" class="star star-2" id="star-2-2" type="radio" name="star"/>
-                                                <label class="star star-2" for="star-2-2"></label>
-                                                <input  value="1" class="star star-1" id="star-1-2" type="radio" name="star"/>
-                                                <label class="star star-1" for="star-1-2"></label>
+                                                <img class="rounded" alt="W3Schools" src="View/assets/be.svg" width="100" height="100">
+                                            </a>
 
-                                            </form>
-                                        </div>
+                                            <div class="aling-star">
+                                                <form action="#">
+
+                                                    <center><label style="margin-top:5em;">Clasificación</label></center>
+                                                    <input value="5" class="star star-5" id="star-5-2" type="radio" name="star"/>
+                                                    <label class="star star-5" for="star-5-2"></label>
+                                                    <input  value="4" class="star star-4" id="star-4-2" type="radio" name="star"/>
+                                                    <label class="star star-4" for="star-4-2"></label>
+                                                    <input  value="3" class="star star-3" id="star-3-2" type="radio" name="star"/>
+                                                    <label class="star star-3" for="star-3-2"></label>
+                                                    <input  value="2" class="star star-2" id="star-2-2" type="radio" name="star"/>
+                                                    <label class="star star-2" for="star-2-2"></label>
+                                                    <input  value="1" class="star star-1" id="star-1-2" type="radio" name="star"/>
+                                                    <label class="star star-1" for="star-1-2"></label>
+
+                                                </form>
+                                            </div>
                                     </div>
 
                                     <button type="submit" class="myButton">Buscar</button>
@@ -215,28 +214,23 @@
                                                     <span class="sitio-name"><?php echo $resultado['nombre']; ?></span>
                                                     <span class="sitio-item__stars">
                                                         <?php
-<<<<<<< HEAD
-                                                             $puntuacion = intval($resultado['puntuacion_usuario']);
-                                                            for ($i = 1; $i <=$puntuacion ; $i++){
-=======
                                                         $puntuacion = intval($resultado['puntuacion_usuario']);
                                                         for ($i = 1; $i <= $puntuacion; $i++) {
->>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
-                                                            ?> 
-                                                            <span>
-                                                                <span class="icon-ic hotel-item__star">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
-                                                                    <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
-                                                                    </path>
-                                                                    </svg>
+
+                                                            $puntuacion = intval($resultado['puntuacion_usuario']);
+                                                            for ($i = 1; $i <= $puntuacion; $i++) {
+                                                                ?> 
+                                                                <span>
+                                                                    <span class="icon-ic hotel-item__star">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="12" height="12" viewBox="0 0 12 12">
+                                                                        <path class="svg-color--primary" fill="#F6AB3F" d="M11.988 5.21c-.052-.275-.27-.488-.545-.534l-3.604-.6L6.63.455C6.542.184 6.287 0 6 0s-.542.184-.632.456L4.16 4.076l-3.603.6c-.275.046-.493.26-.545.533-.052.273.072.55.312.695L3.2 7.63l-1.165 3.493c-.093.28.01.59.25.758.115.08.25.12.382.12.148 0 .295-.05.416-.146L6 9.52l2.917 2.333c.12.098.27.147.416.147.133 0 .267-.04.38-.12.244-.17.346-.478.252-.758L8.8 7.63l2.876-1.725c.24-.144.364-.422.312-.696z">
+                                                                        </path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </span>
-                                                            </span>
-                                                            <?php
-<<<<<<< HEAD
-                                                             }
-=======
+                                                                <?php
+                                                            }
                                                         }
->>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
                                                         ?>
                                                     </span>
                                                     <p id="p1">
@@ -249,19 +243,16 @@
                                                 </div>
                                             </div>
                                         </div>
-        <?php
-    }
-}
-?>
+                                        <?php
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-
-
-
             <div id="content2">
                 <div class="container">
                     <div class="row">
@@ -314,14 +305,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
         <div class="bot1">
             <div class="container">
                 <div class="row">
@@ -337,10 +320,7 @@
                                 <li><a href="#"><img src="View/images/social_ic6.png"></a></li>
                             </ul>
                         </div>
-<<<<<<< HEAD
                         <div class="bot1_title"><a href="./MapadelSitio.php">Mapa del Sitio</a></div>  
-=======
->>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
                     </div>
                     <div class="span3">
                         <div class="bot1_title">Destinos</div>
@@ -386,17 +366,14 @@
         <script type="text/javascript" src="View/js/superfish.js"></script>
         <script type="text/javascript" src="View/js/jquery.ui.totop.js"></script>
         <script>
-<<<<<<< HEAD
                                 $(document).ready(function () {
                                     $('select:not(.ignore)').niceSelect();
                                     FastClick.attach(document.body);
                                 });
-=======
-                            $(document).ready(function () {
-                                $('select:not(.ignore)').niceSelect();
-                                FastClick.attach(document.body);
-                            });
->>>>>>> cf387f2b19d7fc86390e2ac9d55b7cb2ba813598
+                                $(document).ready(function () {
+                                    $('select:not(.ignore)').niceSelect();
+                                    FastClick.attach(document.body);
+                                });
         </script>
 
         <script>
@@ -411,7 +388,7 @@
                 a.src = g;
                 m.parentNode.insertBefore(a, m)
             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-64633646-1', 'auto');
+            ga('create', 'UA-64633646-1', ' auto');
             ga('send', 'pageview');
         </script>
     </div>

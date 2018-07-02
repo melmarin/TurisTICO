@@ -1,51 +1,34 @@
 <?php
 
 include_once 'ConfiguracionBD/ConexionBD.php';
-//include_once '/opt/lampp/htdocs/estudiantes/TurisTICO/ConfiguracionBD/ConexionBD.php';
 
 class UserData {
 
-    private $conn;
-    private $conexion;
+    private $con;
 
     public function __construct() {
-        $this->conexion = new \ConexionDB();
-        $this->conn = $this->conexion->conectar();
+        $this->con = new \ConexionDB();
     }
 
     function insertUsuario($correo, $nombre, $pass) {
 
         $query = "INSERT INTO usuario (nombre,password,administrador,correo) "
                 . "values ('" . $nombre . "','" . $pass . "',0,'" . $correo . "')";
-
-     
-        $resultado;
-        if (mysqli_query($this->conn, $query)) {
-            $resultado = "El usuario se ha registrado correctamente";
-        } else {
-            $resultado = "Error: " . $query . "" . mysqli_error($this->conn);
-        }
-        $this->conn->close();
-        
-        return $resultado;
+        $this->con->consultaSimple($query);
+        $this->con->desconectar();
     }
 
     function loginUsuario($correo, $pass) {
 
-        $query = "SELECT `usuario`.`id_usuario`,`usuario`.`nombre`,
-                `usuario`.`administrador`
-                 FROM `turisticobd`.`usuario`
-                 WHERE `usuario`.`correo` = '" . $correo . "' and `usuario`.`password` = '" . $pass . "'";       
-        $data = mysqli_query($this->conn, $query);
-      /*  $resultado;
-        if (mysqli_num_rows($data) > 0) {
-            while($row = mysqli_fetch_assoc($data)) {
-              $resultado= "".$row["administrador"];
-            }
-         } else {
-            $resultado = "0 results";
-         }*/
-        $this->conn->close();
-        return $data['administrador'];
+        $query = "SELECT id_usuario,nombre,administrador
+                 FROM usuario
+                 WHERE correo = '" . $correo . "' and password = '" . $pass . "'";
+        $data = $this->con->consultaRetorno($query);
+        while ($row = $data->fetch(\PDO::FETCH_ASSOC)) {
+            $resultado = $row;
+        }
+        $this->con->desconectar();
+        return $resultado['administrador'];
     }
+
 }

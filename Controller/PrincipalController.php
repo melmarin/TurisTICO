@@ -28,6 +28,11 @@ class PrincipalController {
             $this->controller = new LoginController();
             $this->controller->invoke();            
          }//if formulario    
+         elseif (isset($_GET['empresa'])){
+            require_once 'Controller/EmpresaController.php';
+            $this->controller = new EmpresaController();
+            $this->controller->invoke();            
+         }//if formulario  
          
          else{
             include_once 'indexView.php';
