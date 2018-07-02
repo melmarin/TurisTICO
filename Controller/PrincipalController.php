@@ -17,21 +17,20 @@ class PrincipalController {
     
      public function invoke() {
          
-         if (isset($_GET['busqueda'])){
+        if (isset($_GET['busqueda'])){
             require_once 'Controller/BusquedaController.php';
             $this->controller = new BusquedaController();
             $this->controller->invoke();
             
-         }//if formulario
-         
-         elseif (isset($_GET['formulario2'])){
-              include($this->ruta.'controller/Formulario2Controller.php');
-            $this->controller = new Formulario2Controller();
-            $this->controller->invoke();
-         }
+         }//if formulario      
+         elseif (isset($_GET['login'])){
+            require_once 'Controller/LoginController.php';
+            $this->controller = new LoginController();
+            $this->controller->invoke();            
+         }//if formulario    
          
          else{
-            include_once 'IndexView.php';
+            include_once 'indexView.php';
          }
      }
 }

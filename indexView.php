@@ -101,7 +101,7 @@
     <body class="main">
         <div id="main">
             <div class="top1 clearfix">
-                <header><div class="logo_wrapper log"><a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt=""></a></div></header>
+                <header><div class="logo_wrapper log"><a href="index.html" class="logo"><img src="./View/images/cr/logo.png" alt=""></a></div></header>
                 <div class="top2 clearfix">
                     <div class="search-form-wrapper clearfix">
                         <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form" >

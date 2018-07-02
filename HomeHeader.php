@@ -100,7 +100,7 @@
 
     <body class="main">
         <div id="main">
-                      <div class="top1 clearfix">
+            <div class="top1 clearfix">
                 <header><div class="logo_wrapper log"><a href="index.html" class="logo"><img src="View/images/cr/logo.png" alt=""></a></div></header>
                 <div class="top2 clearfix">
                     <div class="search-form-wrapper clearfix">
@@ -125,15 +125,16 @@
                                         <li><a href="?inicio">Inicio</a></li>
                                         <li class="sub-menu sub-menu-1"><a href="?busqueda">Toures</a>
                                         </li>
-                                       <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
-                                               data-container="body" type="button" data-html="true" 
-                                               href="./Login.php" id="hola">Iniciar Sesión</a></li>                                    
-                                        <li><a  href="#"></a></li>
-
-                                        <li><a data-placement="bottom" data-toggle="popover" data-title="Registrarse" 
-                                               data-container="body" type="button" data-html="true" 
-                                               href="./RegistroUsuarios.php" id="hola">Registrarse</a></li>                                    
-                                        <li><a  href="#"></a></li>
+                                        <li><a href="?login">Iniciar Sesión</a></li>                                                                
+                                        <li><a href="?registrar">Registrarse</a></li> 
+                                        <li><a href="./AcercaDeTurisTico.php">Acerca de</a></li>
+                                        <li class="sub-menu sub-menu-1"><a href="#">Catalogó Empresas</a>
+                                            <ul>
+                                                <li><a href="./AgregarEmpresa.php">Agregar Empresa</a></li>
+                                                <li><a href="./AcercaDeTurisTico.php">Actualizar Empresa</a></li>
+                                                <li><a href="./AcercaDeTurisTico.php">Eliminar Empresa</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -162,12 +163,12 @@
                                         <input type="password" name="password2" placeholder="Verifica Contraseña..." class="form-control">
                                     </div>
                                     <div class="form-group">
+                                    </div> 
+                                    <div>
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                                     </div>
-                                </form>
-                                <div>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                </div>
+                                </form>                               
                             </div>
                         </div>
                     </div>

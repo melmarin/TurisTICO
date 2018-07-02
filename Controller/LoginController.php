@@ -1,14 +1,27 @@
 <?php
 
-include_once '../Data/UserData.php';
+include_once 'Data\UserData.php';
 
-$userData = new UserData();
+class LoginController {
 
-$correo = $_POST['correo'];
-$pass = $_POST['pass'];
+    private $userData;
 
-$respuesta = $userData->loginUsuario($correo, $pass);
+    public function __construct() {
+        $this->userData = new UserData();
+    }
 
-echo $respuesta;
-?>
+    public function invoke() {
 
+        if (isset($_GET['login'])) {
+            if ($_GET['login'] == "ingresar") {
+                $respuesta = $this->userData->loginUsuario($_POST['correo'], $_POST['pass']);
+
+                if ($respuesta == "0") {
+                    include 'indexLoginUser.php';
+                } elseif ($respuesta == "1") {
+                    include 'indexLoginAdmin.php';
+                }
+            } 
+        }
+    }//invoke
+}//class

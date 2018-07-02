@@ -7,7 +7,7 @@ class BusquedaController {
     private $model;
     
     public function __construct() {
-        $this->model = new \BusquedaData();
+        $this->model = new BusquedaData();
     }
     
     public function invoke() {
