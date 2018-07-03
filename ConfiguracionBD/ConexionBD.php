@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-session_start();
+//session_start();
 
 /**
  *
@@ -29,18 +29,25 @@ class ConexionDB {
       );
      */
     
-    private $datos = array(
+    /*private $datos = array(
       "host" => "localhost",
       "user" => "root",
       "pass" => "",
       "db" => "turisticobd"
+      );*/
+    
+     private $datos = array(
+      "host" => "localhost",
+      "user" => "id6368374_fabian",
+      "pass" => "1234Ab",
+      "db" => "id6368374_turisticobd"
       );
      
     private $con;
 
     public function __construct() {
         try {
-            $this->con = new \PDO('mysql:host=' . $this->datos['host'] . ';dbname=turisticobd', $this->datos['user'], $this->datos['pass']);
+            $this->con = new \PDO('mysql:host=' . $this->datos['host'] . ';dbname=id6368374_turisticobd', $this->datos['user'], $this->datos['pass']);
             //echo 'Conectado a '.$this->con->getAttribute(\PDO::ATTR_CONNECTION_STATUS);
         } catch (PDOException $ex) {
             echo 'Error conectando a la BBDD. ' . $ex->getMessage();
@@ -51,7 +58,7 @@ class ConexionDB {
 
     public function conectar() {
         try {
-            $this->con = new \PDO('mysql:host=' . $this->datos['host'] . ';dbname=turisticobd', $this->datos['user'], $this->datos['pass']);
+            $this->con = new \PDO('mysql:host=' . $this->datos['host'] . ';dbname=id6368374_turisticobd', $this->datos['user'], $this->datos['pass']);
             //echo 'Conectado a '.$this->con->getAttribute(\PDO::ATTR_CONNECTION_STATUS);
         } catch (PDOException $ex) {
             echo 'Error conectando a la BBDD. ' . $ex->getMessage();
