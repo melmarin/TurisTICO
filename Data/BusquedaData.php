@@ -11,8 +11,8 @@
  *
  * @author melma
  */
- $path = $_SERVER['DOCUMENT_ROOT'];
-require_once $path.'/TurisTICO/ConfiguracionBD/ConexionBD.php';
+//$path = $_SERVER['DOCUMENT_ROOT'] . '/TurisTICO/';
+require_once 'ConfiguracionBD/ConexionBD.php';
 //require_once 'ConfiguracionBD/ConexionBD.php';
 //require_once '/opt/lampp/htdocs/estudiantes/TurisTICO/ConfiguracionBD/ConexionBD.php';
 
