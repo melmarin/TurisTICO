@@ -28,7 +28,7 @@ class PrincipalController {
             $this->controller = new LoginController();
             $this->controller->invoke();            
          }//if formulario    
-         elseif (isset($_GET['empresa'])){
+          elseif (isset ($_GET['agregaEmpresa']) || isset($_GET['actualizaEmpresa'])|| isset($_GET['eliminaEmpresa'])) {
             require_once 'Controller/EmpresaController.php';
             $this->controller = new EmpresaController();
             $this->controller->invoke();            

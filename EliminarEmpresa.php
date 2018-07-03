@@ -10,7 +10,7 @@
         <div class="bot1_txt1 center"><span style=" font-size: 36px " >Eliminar Empresa</span></div>
         <br>
         <div class = " modal-body center"  >
-            <form action="?empresa=eliminar" method="post" >  
+            <form action="?eliminaEmpresa=eliminar" method="post" >  
                  <input id="nombre" name="nombre" class="hidden" type="Text" value="<?php echo $resultado['id_empresa']; ?>" >
                 <div class="form-group">                    
                     <label for="nombre" style="font-size: 20px;  display: inline-table;">Nombre:&nbsp;</label>

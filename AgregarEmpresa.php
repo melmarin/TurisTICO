@@ -10,7 +10,7 @@
         <div class="bot1_txt1 center"><span style=" font-size: 36px " >Registrar Empresa</span></div>
         <br>
         <div class = " modal-body center"  >
-            <form action="?empresa=ingresar" method="POST" >                
+            <form action="?agregaEmpresa=registrar" method="POST" >                
                 <div class="form-group">
                     <label for="nombre" style="font-size: 20px;  display: inline-table;">Nombre:&nbsp;</label>
                     <input id="nombre" name="nombre" style=" height: 30px; width: 250px; " type="Text" >  

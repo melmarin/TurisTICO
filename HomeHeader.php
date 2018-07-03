@@ -77,9 +77,9 @@
                                         <li><a href="./AcercaDeTurisTico.php">Acerca de</a></li>
                                         <li class="sub-menu sub-menu-1"><a href="#">Catalogó Empresas</a>
                                             <ul>
-                                                <li><a href="./AgregarEmpresa.php">Agregar Empresa</a></li>
-                                                <li><a href="./ActualizarEmpresa.php">Actualizar Empresa</a></li>
-                                                <li><a href="./EliminarEmpresa.php">Eliminar Empresa</a></li>
+                                                <li><a href="?agregaEmpresa">Agregar Empresa</a></li>
+                                                <li><a href="?actualizaEmpresa">Actualizar Empresa</a></li>
+                                                <li><a href="?eliminaEmpresa.php">Eliminar Empresa</a></li>
                                             </ul>
                                         </li>
                                     </ul>

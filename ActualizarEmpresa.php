@@ -10,7 +10,7 @@
         <div class="bot1_txt1 center"><span style=" font-size: 36px " >Actualizar Empresa</span></div>
         <br>
         <div class = " modal-body center"  >
-            <form action="?empresa=actualizar"  method="post" >  
+            <form action="?actualizaEmpresa=actualizar"  method="post" >  
                 <input id="nombre" name="nombre" class="hidden" type="Text" value="<?php echo $resultado['id_empresa']; ?>" >
                 <div class="form-group">                    
                     <label for="nombre" style="font-size: 20px;  display: inline-table;">Nombre:&nbsp;</label>

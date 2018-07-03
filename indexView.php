@@ -124,6 +124,12 @@
                                     <ul class="nav sf-menu clearfix">
                                         <li><a href="?inicio">Inicio</a></li>
                                         <li class="sub-menu sub-menu-1"><a href="?busqueda">Toures</a>
+                                             <li class="sub-menu sub-menu-1"><a href="#">Catalogó Empresas</a>
+                                            <ul>
+                                                <li><a href="?agregaEmpresa">Agregar Empresa</a></li>
+                                                <li><a href="?actualizaEmpresa">Actualizar Empresa</a></li>
+                                                <li><a href="?eliminaEmpresa.php">Eliminar Empresa</a></li>
+                                            </ul>
                                         </li>
                                         <li><a  href="#"></a></li>
                                         <li><a href="./Login.php" id="hola">Iniciar Sesión</a></li>                                    
