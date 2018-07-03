@@ -20,6 +20,15 @@ class ConexionDB {
         "db" => "turisticobd"
     );*/
 
+    /*
+     * private $datos = array(
+      "host" => "localhost",
+      "user" => "id6368374_fabian",
+      "pass" => "1234Ab",
+      "db" => "id6368374_turisticobd"
+      );
+     */
+    
     private $datos = array(
       "host" => "localhost",
       "user" => "root",

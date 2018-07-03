@@ -20,15 +20,14 @@ class UserData {
 
     function loginUsuario($correo, $pass) {
 
-        $query = "SELECT id_usuario,nombre,administrador
-                 FROM usuario
-                 WHERE correo = '" . $correo . "' and password = '" . $pass . "'";
+        $query = "SELECT administrador
+                 FROM usuario WHERE correo = '$correo' and password = '$pass'";
         $data = $this->con->consultaRetorno($query);
-        while ($row = $data->fetch(\PDO::FETCH_ASSOC)) {
-            $resultado = $row;
-        }
+        $row = $this->datos->fetch(\PDO::FETCH_NUM);
+        $resultado = $this->row[0];
         $this->con->desconectar();
-        return $resultado['administrador'];
+        
+        return $resultado;
     }
 
 }

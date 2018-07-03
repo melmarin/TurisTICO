@@ -22,7 +22,7 @@ class PrincipalController {
             $this->controller = new BusquedaController();
             $this->controller->invoke();
             
-         }//if formulario      
+         }//if formulario   =   
          elseif (isset($_GET['login'])){
             require_once 'Controller/LoginController.php';
             $this->controller = new LoginController();
